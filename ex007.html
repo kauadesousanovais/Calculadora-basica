@@ -16,13 +16,8 @@
         }
         input#Soma{
             width: 100px;
-            height: px;
-
-        }
-        div{
+            height: 20 px;
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
         }
     </style>
 </head>
@@ -30,9 +25,10 @@
     <h1>Somando Valores</h1>
     <input type="number" name="txtn1" id="txtn1"> +
     <input type="number" name="txtn2" id="txtn2"> =
-    <div id="res">
+    <span id="res">
         Resultado
-    </div>
+    </span>
+    <br>
     <input type="button" value="Somar" onclick="somar()" id="Soma">
     <script>
         function somar(){
@@ -42,8 +38,17 @@
             var n1 = Number(tn1.value)
             var n2 = Number(tn2.value)
             var s = n1 + n2 
-            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${s}.`
+            res.innerHTML = `${s}.`
         }
+        //Funçao para colocar o Enter
+        function handleEnter(event){
+                if(event.keyCode === 13) {
+                    somar();
+                }
+            }
+        //Adicionar o evento para todos os numeros
+        document.getElementById('txtn1').addEventListener('keydown', handleEnter);
+        document.getElementById('txtn2').addEventListener('keydown', handleEnter);
     </script>
 </body>
 </html>
