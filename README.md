@@ -1,2 +1,2 @@
 # Calculadora basica
- Calculadora de adição feita com uso de Javascript
+ Calculadora de adição e Divisão feita com uso de Javascript
